@@ -1,0 +1,474 @@
+
+
+/*======================== common css 
+=================================================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+:root{
+    --primary_bg:#0a181f;
+    --secondery_bg:#f5f8fd;
+    --primary_text:rgb(28, 67, 76);
+    --secondery_text:rgb(238, 232, 213);
+    --white_text:#fff;
+    --bg-white:#fff;
+    --bg-overlay-color: rgb(238, 232, 213);
+
+    
+    --black_text:#000;
+    --bg-black:#000;
+    --color_text:#2dee86;
+    --bg-black:#000000;
+    --text-black:#000000;
+    --bg-white:#ffffff;
+    --para-text:#5c5858;
+    --light-bg:#fdfcfcf8;
+
+
+
+
+    --primary-bg-light:rgb(168, 180, 184);
+    --primary-bg:rgb(28, 67, 76);
+    --secondary-bg: rgb(238, 232, 213);
+    --primary-txt: rgb(28, 67, 76);
+    --secondary-txt: rgb(238, 232, 213);
+    --orange-txt:rgb(203, 75, 22);
+    --blue-txt:rgb(38, 139, 210);
+
+    --light-gray:#dff3fc;
+    --first-Grey: rgb( 169, 182, 184); 
+    --second-Grey: rgb( 147, 161, 161); 
+    --bold-Grey: rgb( 88, 110, 117); 
+
+
+
+}
+a{
+    text-decoration: none;
+}
+*,
+*::after,
+*::before{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+p{
+  color: var(--bold-Grey);
+  font-size: 16px;
+}
+section{
+    margin:0;
+    padding:0;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 600;
+    margin: 0;
+}
+body{
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+.social_icons i{
+    display: none;
+}
+
+
+
+ /* Add your CSS here */
+ .popup {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 100%;
+}
+
+.popup-content img {
+  max-width: 100px;
+  margin-bottom: 20px;
+}
+
+.popup-content h2 {
+  margin: 10px 0;
+}
+
+.popup-content p {
+  margin: 20px 0;
+}
+
+.popup-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  width: 100px;
+}
+
+.popup-content button.no {
+  background-color: #dc3545;
+}
+
+.popup-content button.agree {
+  background-color: #000;
+}
+
+.popup-content button.disagree {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.popup-content .terms {
+  font-size: 12px;
+  color: #555;
+}
+
+
+
+
+
+/*============================================================= menu css =================================*/
+.header{
+  background-color: var(--bg-white);
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+dl, ol, ul {
+  margin-top: 0;
+  margin-bottom: 0rem;
+}
+ol, ul {
+  padding-left: 0rem;
+}
+.nav-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  position: relative;
+}
+.logo img {width: 75px;}
+.menu {display: flex;}
+.menu li {padding-left: 30px;}
+.menu li a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--text-black);
+  font-weight: 500;
+  text-align: center;
+  transition: 0.15s ease-in-out;
+  position: relative;
+  text-transform: capitalize;
+  font-size: 18px;
+}
+.menu li a:hover{
+color: var(--orange-txt);
+}
+.menu li a::after {
+  content: '';
+  height: 2px;
+  width: 0;
+  background-color:var(--orange-txt);
+  margin: 0 auto;
+  display: block;
+}
+.menu li a:hover:after {
+  width: 100%;
+  transition: width 0.2s linear;
+}
+.open-menu , .close-menu {
+  position: absolute;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: none;
+  font-size: 28px;
+}
+
+.open-menu {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  color: var(--primary-txt);
+}
+.close-menu {
+  top: 20px;
+  left: 25px;
+  color: var(--primary-txt);
+}
+#check {display: none;}
+@media(max-width: 610px){
+  .menu {
+      flex-direction: column;
+      align-items: center;
+      width: 70%;
+      height: 100vh;
+      position: fixed;
+      padding: 100px 0px;
+      top: 0;
+      right: -100%;
+      z-index: 100;
+      background-color: var(--bg-overlay-color);
+      transition: all 0.2s ease-in-out;
+  }
+  i.fas.fa-bars {
+    border: 2px solid black;
+    padding: 3px;
+}
+  .menu li a{
+    color:var(--primary_text)
+  }
+  .menu li a {padding: 10px;}
+  .open-menu , .close-menu {display: block;}
+  #check:checked ~ .menu {right: 0;}
+}
+
+
+/*========================================================= intro css ==================================================*/
+.intro{
+    background: var(--bg-white);
+}
+.vertical{
+   padding-top: 180px;
+   padding-bottom: 50px;
+}
+.intro h1{
+    font-size: 60px;
+    padding-bottom: 10px;
+    color: var(--text-black);
+}
+
+.intro p{
+    border-left: 4px solid var(--orange-txt);
+    padding-left:15px;
+    font-size: 18px;
+    color:var(--para-text);
+}
+.intro span {
+    padding: 5px;
+    background: rgb(0, 11, 16);
+    font-weight: 500;
+    color:var(--white_text)
+}
+
+/*=============================================================== about us =============================================*/ 
+.about_us{
+  background: var(--light-bg);
+}
+/*=============================================================== brands =============================================*/ 
+.accordion-item h5{
+  font-size: 16px;
+  color:var(--text-black)
+}
+.brands_logo {
+  padding-left: 100px;
+}
+.accordion{
+  background: var(--secondary-bg);
+}
+.accordion-button {
+  outline: none !important;
+  box-shadow: none !important;
+  
+}
+
+
+/*=============================================================== our brands =============================================*/ 
+.our_brands{
+  background: var(--light-bg);
+} 
+
+
+/*=============================================================== product css =============================================*/
+
+.Products{
+  background: var(--bg-white);
+}
+.Products_content h5 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--black_text);
+  line-height: 22px;
+}
+.Products_content img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+.text_read a{
+  color:var(--blue-txt);
+}
+
+.Products_content {
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  overflow: hidden;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+  text-align: left;
+}
+th, td {
+  padding: 7px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+th {
+  background-color: #f2f2f2;
+  font-weight: 400;
+}
+
+#more {
+  display: none;
+}
+
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
+}
+
+.skill_info p span {
+  font-weight: bold;
+}
+
+.products_content p {
+  margin-top: 15px;
+  color:var(--para-text);
+}
+
+
+.more-text {
+  display: none;
+}
+
+.read-less {
+  display: none;
+}
+
+
+
+/* Responsive styles */
+@media only screen and (max-width: 667px) {
+
+  .offcanvas.offcanvas-start {
+    top: 0;
+    left: 0;
+    width: 70%;
+}
+.brands_logo {
+  padding-left: 0px;
+}
+.logo img {width: 60px;}
+.about_img img, .brand_img img {
+  width: 75%;
+  border-radius: 15px;
+}
+}
+.about_img, .brand_img{
+ text-align: center;
+
+}
+
+/*===================================================== blog css =========================================================*/
+.blog{
+  background: var(--secondary-bg);
+ }
+.blog_content h5{
+  font-size: 17px;
+  color:var(--primary-txt);
+}
+.blog_img {
+  width: 90%;
+}
+
+/*===================================================== contact css =========================================================*/
+.contact_us{
+  background: var(--light-bg);
+}
+.contact .info {
+  padding: 30px;
+  background: #fff;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+}
+.phone_content a {
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+}
+.contact .info i {
+  font-size: 18px;
+  color: #149ddd;
+  float: left;
+  width:40px;
+  height: 40px;
+  background: #dff3fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+#scroll-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+
+/*===================================================== responsive css =====================================================*/
+@media (max-width:991px){
+    .sidebar{
+        background-color:var(--white_text);
+        backdrop-filter: blur(10px);
+    }
+
+    .vertical{
+      padding-top: 120px;
+      padding-bottom: 0;
+
+  }
+    .intro p{
+      line-height: 35px;
+  }
+    .intro h1{
+        font-size: 40px;
+    }
+    .accordion-header h5{
+     font-size: 18px;
+    }
+}
